@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by vitorfernandes on 8/20/16.
  */
-public class ChainingApp {
+public class BuilderExampleApp {
     public static void main(String[] args) {
         PatientBuilder builder = new PatientBuilder();
         Patient patient = builder.
