@@ -12,3 +12,5 @@ One of the most curious things that java 8 give us is new syntax sugar for funct
 ###More in due time
 
 More stuff will be appended to this repo as soon as new things are experimented...
+
+
