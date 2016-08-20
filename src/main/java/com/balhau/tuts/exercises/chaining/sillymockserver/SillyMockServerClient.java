@@ -21,21 +21,42 @@ public class SillyMockServerClient {
         this.responses=new ArrayList<>();
     }
 
-    public SillyMockServerClient when(SillyRequest request){
-        this.requests.add(request);
+    public SillyMockServerClient when(SillyRequestBuilder request){
+        this.requests.add(request.build());
         return this;
     }
 
-    public SillyMockServerClient respond(SillyResponse response){
-        this.responses.add(response);
+    public SillyMockServerClient respond(SillyResponseBuilder response){
+        this.responses.add(response.build());
         return this;
     }
 
     private int findRequest(SillyRequest request){
-        return 0;
+        int aux=0;
+        for(SillyRequest current : requests){
+            if(SillyRequest.isEquivalent(current,request)) {
+                return aux;
+            }
+            aux++;
+        }
+        return -1;
     }
 
-    public SillyResponse call(SillyRequest request){
+    public static SillyResponseBuilder response(){
+        return new SillyResponseBuilder();
+    }
+
+    public static SillyRequestBuilder request(){
+        return new SillyRequestBuilder();
+    }
+
+
+
+    public SillyResponse call(SillyRequest request) throws Exception{
+        int pos = findRequest(request);
+        if(pos==-1){
+            throw new Exception("Request not mapped");
+        }
         return this.responses.get(findRequest(request));
     }
 }

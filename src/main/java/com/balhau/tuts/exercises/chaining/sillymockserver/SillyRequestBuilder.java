@@ -34,6 +34,11 @@ public class SillyRequestBuilder implements Builder<SillyRequest>{
         return this;
     }
 
+    public SillyRequestBuilder withBody(String body){
+        this.body=body;
+        return this;
+    }
+
     @Override
     public SillyRequest build() {
         return new SillyRequest(

@@ -1,5 +1,7 @@
 package com.balhau.tuts.exercises.chaining.sillymockserver;
 
+import com.google.gson.Gson;
+
 import java.util.Map;
 import java.util.Set;
 
@@ -42,6 +44,11 @@ public class SillyRequest {
             }
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 
     @Override
