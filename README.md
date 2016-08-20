@@ -1,10 +1,10 @@
-#Java 8 Features
+# Java 8 Features
 
-##What about
+## What about
 
 This is a little maven project just to explore a little bit more the new features that were included in the version 8 of java.
 
-###Functional Stuff
+### Functional Stuff
 
 One of the most curious things that java 8 give us is new syntax sugar for functional programming. The ability to explicitly declare functional interfaces is a plus to reduce the verbosity of code. You've got a [blog post](https://codecorner.balhau.net/2016/02/20/decorate-and-factory/) that tackles the building of fluent interfaces and use code you'll find here for that purpose
 
