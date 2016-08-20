@@ -20,14 +20,14 @@ public class SillyRequest {
         this.body=body;
     }
 
-    public boolean isEquivalent(SillyRequest request){
-        if (this.equals(request)){
+    public static boolean isEquivalent(SillyRequest requestA,SillyRequest requestB){
+        if (requestA.equals(requestB)){
             return true;
         }
         if(
-            this.method.equals(request.method) &&
-            this.path.equals(request.path) && this.body.equals(request.body) && containsHeaders(this.headers,request.headers)
-          ){
+                requestA.method.equals(requestB.method) &&
+                        requestA.path.equals(requestB.path) && requestA.body.equals(requestB.body) && containsHeaders(requestA.headers,requestB.headers)
+                ){
             return true;
         }
         return false;
